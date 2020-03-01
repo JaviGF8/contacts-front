@@ -1,0 +1,58 @@
+// COLORS
+// Primary
+$primary-darker: #061e4a;
+$primary-dark: #0e3467;
+$primary: #13437a;
+$primary-light: #5a7ba2;
+$primary-lighter: #b8c7d7;
+
+// Secondary
+$secondary-darker: #51b6a6;
+$secondary-dark: #6ec7ba;
+$secondary: #81d2c7;
+$secondary-light: #81d2c7;
+$secondary-lighter: #d9f2ee;
+
+// Gray
+$gray: #888888;
+$gray-light: #c0c0c0;
+$gray-lighter: #d8d8d8;
+$gray-border: 1px solid rgba($gray-light, 0.5);
+
+// B&W
+$background-gray: #f0f0f6;
+$white: #ffffff;
+$black: #282828;
+
+// Error, info...
+$color-error: #db341a;
+$color-error-border: #ff745e;
+$color-warning: #e8b125;
+$color-warning-border: #ffef5e;
+
+// PADDING, MARGIN, ETC
+$size-xs: 2px;
+$size-sm: 4px;
+$size-md: 8px;
+$size-lg: 16px;
+$size-xl: 32px;
+
+// TRANSITIONS
+$transition-slow: 0.5s;
+$transition-mid: 0.25s;
+$transition-fast: 0.1s;
+
+// FONT
+$font-xs: 8px;
+$font-sm: 12px;
+$font-md: 14px;
+$font-lg: 16px;
+$font-xl: 20px;
+$font-subtitle: 24px;
+$font-title: 32px;
+
+// SCREEN SIZES
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;

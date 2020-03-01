@@ -1,0 +1,29 @@
+@import '../../styles/constants.scss';
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    width: 100%;
+  }
+
+  > input {
+    flex: 1;
+  }
+
+  .contact-form-buttons {
+    background-color: $white;
+    border-top: 1px solid $gray-lighter;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: $size-md;
+    padding: $size-md $size-lg;
+
+    > *:not(:last-child) {
+      margin-left: $size-md;
+    }
+  }
+}

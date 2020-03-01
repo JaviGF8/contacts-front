@@ -1,0 +1,43 @@
+@import 'styles/constants.scss';
+
+.custom-input {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid $gray;
+  transition: linear all $transition-mid;
+
+  > i {
+    padding-left: $size-md;
+    transition: linear all $transition-mid;
+  }
+
+  input {
+    font-size: $font-lg;
+    height: $size-xl;
+    padding-left: $size-sm;
+    background-color: $white;
+    border: 0;
+    outline: none;
+    color: $black;
+    flex: 1;
+  }
+  .custom-icon {
+    margin-right: $size-md;
+  }
+}
+.custom-input.focused {
+  border-bottom-color: $primary;
+
+  i {
+    color: $primary;
+  }
+}
+.custom-input.disabled {
+  border-bottom-color: transparent;
+
+  input,
+  input::placeholder {
+    color: $gray;
+  }
+}

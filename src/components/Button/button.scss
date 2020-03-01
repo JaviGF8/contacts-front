@@ -1,0 +1,30 @@
+@import 'styles/constants.scss';
+
+.custom-btn {
+  padding: $size-md $size-lg;
+  font-size: $font-lg;
+  border-radius: $size-sm;
+  border: 0;
+  color: white;
+  transition: linear opacity $transition-fast;
+  outline: 0;
+}
+.custom-btn:disabled {
+  opacity: 0.5;
+}
+
+.custom-btn.primary-btn {
+  background-color: $primary;
+}
+.custom-btn.primary-inverted-btn {
+  color: $primary;
+  border: 1px solid;
+  border-color: $primary;
+  background-color: $white;
+}
+.custom-btn.secondary-btn {
+  background-color: $secondary;
+}
+.custom-btn.error-btn {
+  background-color: $color-error;
+}

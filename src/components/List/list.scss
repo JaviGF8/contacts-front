@@ -1,0 +1,33 @@
+@import '../../styles/constants.scss';
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .contact {
+    display: flex;
+    align-items: center;
+
+    > * {
+      flex: 1;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-direction: row-reverse;
+
+      > *:not(:last-child) {
+        margin-left: $size-md;
+      }
+    }
+  }
+
+  .no-contacts {
+    padding: $size-md;
+    border-radius: $size-sm;
+    color: $color-warning;
+    background-color: rgba($color-warning, 0.2);
+    border: 1px solid $color-warning-border;
+  }
+}
