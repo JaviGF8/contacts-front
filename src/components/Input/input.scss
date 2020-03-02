@@ -4,10 +4,11 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $gray-light;
   transition: linear all $transition-mid;
 
   > i {
+    color: $gray-light;
     padding-left: $size-md;
     transition: linear all $transition-mid;
   }
@@ -38,6 +39,6 @@
 
   input,
   input::placeholder {
-    color: $gray;
+    color: $gray-light;
   }
 }
