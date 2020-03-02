@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './index.scss';
-
 const Toast = ({ show, text, ...rest }) => (
   <div {...rest} className={`custom-toast shadow${show ? ' show' : ''}`}>
     {text}

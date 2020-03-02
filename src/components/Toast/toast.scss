@@ -1,4 +1,4 @@
-@import 'styles/constants.scss';
+@import '../../styles/constants.scss';
 
 .custom-toast {
   position: absolute;
@@ -16,4 +16,5 @@
   cursor: pointer;
   opacity: 1;
   pointer-events: all;
+  z-index: 1010;
 }

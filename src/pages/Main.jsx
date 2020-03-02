@@ -3,7 +3,7 @@ import { getAllContacts, createContact, deleteContact, updateContact } from '../
 import Modal from '../components/Modal';
 import List from '../components/List';
 import Options from '../components/Options';
-import Toast from '../components/Toast/Toast';
+import Toast from '../components/Toast';
 
 const Main = () => {
   const [ contact, setContact ] = useState(null);
@@ -40,8 +40,12 @@ const Main = () => {
         setContact(null);
         newToast(`Contact ${newContact._id ? 'updated' : 'created'} successfully`);
       })
-      .catch(() => {
-        newToast('Error on contact');
+      .catch((error) => {
+        newToast(
+          error?.response?.data?.message ?
+            'Email duplicated' :
+            `Error ${newContact._id ? 'updating' : 'creating'} contact`,
+        );
       });
   };
 
@@ -53,7 +57,7 @@ const Main = () => {
         newToast('Contact removed');
       })
       .catch(() => {
-        newToast('Error on contact');
+        newToast('Error while removing contact');
       });
   };
 
