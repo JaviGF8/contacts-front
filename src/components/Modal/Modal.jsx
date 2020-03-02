@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Form from '../Form';
 
-const Modal = ({ contact, onHide, onSave }) => (
+const Modal = ({ contact, loading, onHide, onSave }) => (
   <div className="modal-container">
     <button type="button" className="modal-shadow fadein" onClick={onHide}>
       {' '}
@@ -12,7 +12,7 @@ const Modal = ({ contact, onHide, onSave }) => (
         <span>{contact?._id ? 'Edit' : 'Add'}</span>
       </div>
       <div className="modal-body">
-        <Form contact={contact} onCancel={onHide} onSave={onSave} />
+        <Form contact={contact} loading={loading} onCancel={onHide} onSave={onSave} />
       </div>
     </div>
   </div>
@@ -20,10 +20,12 @@ const Modal = ({ contact, onHide, onSave }) => (
 
 Modal.defaultProps = {
   contact: null,
+  loading: false,
 };
 
 Modal.propTypes = {
   contact: PropTypes.object,
+  loading: PropTypes.bool,
   onHide: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
 };

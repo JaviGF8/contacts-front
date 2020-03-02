@@ -2,16 +2,7 @@ import { get, post, put, remove } from './ApiWrapper';
 
 const CONTACT_URL = 'contact';
 
-export const getAllContacts = () =>
-  new Promise((resolve, reject) => {
-    get(CONTACT_URL)
-      .then((response) => {
-        resolve(response);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
+export const getAllContacts = () => get(CONTACT_URL);
 
 export const createContact = (contact) => post(CONTACT_URL, { contact });
 
