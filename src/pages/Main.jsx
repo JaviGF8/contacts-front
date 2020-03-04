@@ -2,12 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { getAllContacts, createContact, deleteContact, updateContact } from '../actions/contacts';
 import Modal from '../components/Modal';
 import List from '../components/List';
-import Options from '../components/Options';
+import Navbar from '../components/Navbar';
 import Toast from '../components/Toast';
 
+const filterContacts = (contacts, filter) =>
+  contacts.filter(
+    ({ name, lastname, email, telephone }) =>
+      -1 < name.toLowerCase().indexOf(filter) ||
+      -1 < lastname.toLowerCase().indexOf(filter) ||
+      -1 < email.toLowerCase().indexOf(filter) ||
+      -1 < telephone.toLowerCase().indexOf(filter),
+  );
+
 const Main = () => {
+  const [ allContacts, setAllContacts ] = useState([]);
   const [ contact, setContact ] = useState(null);
   const [ contacts, setContacts ] = useState([]);
+  const [ filter, setFilter ] = useState(null);
   const [ loading, setLoading ] = useState(true);
   const [ loadingSave, setLoadingSave ] = useState(true);
   const [ mounted, setMounted ] = useState(false);
@@ -15,10 +26,20 @@ const Main = () => {
   const [ showToast, setShowToast ] = useState(false);
   const [ toastText, setToastText ] = useState(false);
 
+  const setCurrentContacts = () => {
+    let newContacts = allContacts && allContacts.length ? [ ...allContacts ] : [];
+
+    if (filter) {
+      newContacts = filterContacts(allContacts, filter.toLowerCase());
+    }
+
+    setContacts(newContacts);
+  };
+
   const reload = () => {
     setLoading(true);
     getAllContacts().then(({ data }) => {
-      setContacts(data);
+      setAllContacts(data);
     });
   };
 
@@ -82,6 +103,10 @@ const Main = () => {
   }, [ contact ]);
 
   useEffect(() => {
+    setCurrentContacts(contacts);
+  }, [ allContacts, filter ]);
+
+  useEffect(() => {
     if (showToast) {
       setTimeout(() => setShowToast(false), 5000);
     }
@@ -90,9 +115,8 @@ const Main = () => {
 
   return (
     <main>
+      <Navbar onAdd={() => setContact({})} onFilter={setFilter} />
       <div id="main-container">
-        <h1 className="box shadow">My contacts</h1>
-        <Options onAdd={() => setContact({})} onEdit={setContact} />
         <List contacts={contacts} loading={loading} onDelete={onDelete} onEdit={setContact} />
         {showModal && <Modal contact={contact} loading={loadingSave} onHide={() => setContact(null)} onSave={onSave} />}
         <Toast show={showToast} text={toastText} />

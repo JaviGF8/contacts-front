@@ -1,7 +1,7 @@
 @import '../../styles/constants.scss';
 
 .custom-toast {
-  position: absolute;
+  position: fixed;
   padding: $size-md;
   border-radius: $size-sm;
   background-color: rgba($black, 0.75);

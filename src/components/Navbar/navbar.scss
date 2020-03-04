@@ -1,0 +1,72 @@
+@import '../../styles/constants.scss';
+
+.navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+  z-index: 11;
+  height: 70px;
+
+  > div {
+    margin: 0 auto;
+    max-width: 1500px;
+    width: 100%;
+    padding: 0 $size-lg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+
+    h1 {
+      margin: 0;
+    }
+
+    .options {
+      display: flex;
+      align-items: center;
+
+      > *:not(:last-child) {
+        margin-right: $size-lg;
+      }
+
+      input {
+        background-color: transparent;
+        color: $white;
+      }
+      input::placeholder {
+        color: $gray-lighter;
+      }
+
+      .custom-input.focused {
+        border-color: $secondary;
+
+        i {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .navbar {
+    height: 160px;
+    > div {
+      flex-direction: column;
+      .options {
+        flex-direction: column;
+
+        > *:not(:last-child) {
+          margin-right: 0;
+        }
+        > * {
+          margin-top: $size-lg;
+        }
+      }
+    }
+  }
+}

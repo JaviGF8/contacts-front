@@ -4,6 +4,13 @@ import Input from '../Input';
 import Button from '../Button';
 import { BUTTON_TYPES } from '../Button/Button';
 
+const validateEmail = (email) => {
+  // const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.
+  // [0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+};
+
 const Form = ({ contact, loading, onCancel, onSave }) => {
   const [ currentContact, setCurrentContact ] = useState({});
   const [ errors, setErrors ] = useState({});
@@ -22,7 +29,7 @@ const Form = ({ contact, loading, onCancel, onSave }) => {
       errs.hasErrors = true;
       errs.lastname = true;
     }
-    if (!currentContact.email) {
+    if (!currentContact.email || !validateEmail(currentContact.email)) {
       errs.hasErrors = true;
       errs.email = true;
     }

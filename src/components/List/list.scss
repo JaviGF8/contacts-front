@@ -4,30 +4,88 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: auto;
 
-  .contact {
-    display: flex;
-    align-items: center;
+  .contacts {
+    min-width: 600px;
 
-    > * {
-      flex: 1;
-    }
+    .contact.contact-header {
+      font-weight: bold;
+      padding-bottom: $size-md;
+      margin-bottom: $size-md;
+      border-bottom: 1px solid $primary;
+      color: $primary;
 
-    .contact-buttons {
-      display: flex;
-      flex-direction: row-reverse;
-
-      > *:not(:last-child) {
-        margin-left: $size-md;
+      p:last-child {
+        text-align: right;
       }
     }
-  }
 
-  .no-contacts {
-    padding: $size-md;
-    border-radius: $size-sm;
-    color: $color-warning;
-    background-color: rgba($color-warning, 0.2);
-    border: 1px solid $color-warning-border;
+    .contact {
+      display: flex;
+      align-items: center;
+      margin-bottom: $size-md;
+      padding: 0 $size-md;
+      border-left: $size-sm solid transparent;
+      transition: linear all $transition-mid;
+
+      > * {
+        flex: 1;
+      }
+      > p {
+        transition: linear all $transition-mid;
+        margin: 0;
+      }
+
+      .contact-buttons {
+        display: flex;
+        flex-direction: row-reverse;
+
+        > *:not(:last-child) {
+          margin-left: $size-md;
+        }
+      }
+    }
+    .contact:not(.contact-header):hover {
+      border-left-color: $secondary;
+
+      > p {
+        font-weight: 600;
+      }
+    }
+    .contact:last-child {
+      margin-bottom: 0;
+    }
+
+    .no-contacts {
+      padding: $size-md;
+      border-radius: $size-sm;
+      color: $color-warning;
+      background-color: rgba($color-warning, 0.2);
+      border: 1px solid $color-warning-border;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .contacts-list {
+    .contacts {
+      min-width: 200px;
+      .contact.contact-header {
+        display: none;
+      }
+      .contact {
+        flex-direction: column;
+
+        > *:not(:last-child) {
+          margin-bottom: $size-md;
+          font-size: $font-lg;
+        }
+      }
+      .contact:not(:last-child) {
+        border-bottom: 1px solid $secondary;
+        padding-bottom: $size-lg;
+      }
+    }
   }
 }

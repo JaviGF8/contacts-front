@@ -4,7 +4,7 @@ import Form from '../Form';
 
 const Modal = ({ contact, loading, onHide, onSave }) => (
   <div className="modal-container">
-    <button type="button" className="modal-shadow fadein" onClick={onHide}>
+    <button type="button" className="modal-shadow fadein" onClick={() => !loading && onHide()}>
       {' '}
     </button>
     <div className="fadein modal">
