@@ -6,11 +6,21 @@
   "main": "index.js",
   "scripts": {
     "start": "SET ENVIRONMENT=development&& webpack-dev-server -d --progress",
-    "mac": "ENVIRONMENT=development webpack-dev-server -d --progress"
+    "mac": "ENVIRONMENT=development webpack-dev-server -d --progress",
+    "test": "jest --maxWorkers=100%"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "./src/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     }
   },
   "lint-staged": {
@@ -61,6 +71,8 @@
     "babel-preset-airbnb": "^4.4.0",
     "babel-preset-minify": "^0.5.1",
     "css-loader": "^3.4.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
@@ -72,6 +84,8 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
     "lint-staged": "^10.0.8",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",

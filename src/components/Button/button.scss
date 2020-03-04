@@ -8,9 +8,11 @@
   color: white;
   transition: linear opacity $transition-fast;
   outline: 0;
+  cursor: pointer;
 }
 .custom-btn:disabled {
   opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .custom-btn.primary-btn {

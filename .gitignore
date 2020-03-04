@@ -1,6 +1,5 @@
 node_modules/
 src/temp/
-src/temp/*
 .vscode/
 
 # Compiled source #
@@ -29,11 +28,11 @@ src/temp/*
 ######################
 *.log
 
-# Mac #
-#######
 *package-lock.json
-
-# Mac #
 .env
 .env.*
 .DS_Store
+
+# tests #
+*.snap
+*/__snapshots__/

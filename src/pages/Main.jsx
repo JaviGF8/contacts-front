@@ -24,10 +24,10 @@ const Main = () => {
   const [ mounted, setMounted ] = useState(false);
   const [ showModal, setShowModal ] = useState(false);
   const [ showToast, setShowToast ] = useState(false);
-  const [ toastText, setToastText ] = useState(false);
+  const [ toastText, setToastText ] = useState('');
 
   const setCurrentContacts = () => {
-    let newContacts = allContacts && allContacts.length ? [ ...allContacts ] : [];
+    let newContacts = allContacts?.length ? [ ...allContacts ] : [];
 
     if (filter) {
       newContacts = filterContacts(allContacts, filter.toLowerCase());
@@ -36,16 +36,18 @@ const Main = () => {
     setContacts(newContacts);
   };
 
-  const reload = () => {
-    setLoading(true);
-    getAllContacts().then(({ data }) => {
-      setAllContacts(data);
-    });
-  };
-
   const newToast = (text) => {
     setShowToast(true);
     setToastText(text);
+  };
+
+  const reload = () => {
+    setLoading(true);
+    getAllContacts()
+      .then(({ data }) => {
+        setAllContacts(data);
+      })
+      .catch(({ message }) => newToast(message));
   };
 
   const onSave = (newContact) => {

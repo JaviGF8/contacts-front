@@ -81,7 +81,7 @@ const Form = ({ contact, loading, onCancel, onSave }) => {
         value={currentContact?.telephone}
         onChange={(value) => setCurrentContact({ ...currentContact, telephone: value })}
       />
-      {errors && errors.hasErrors && (
+      {errors?.hasErrors && (
         <div className="user-error-container">
           <div className="user-error">
             <p>Errors on:</p>
