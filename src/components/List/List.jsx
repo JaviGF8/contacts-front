@@ -30,7 +30,7 @@ const List = ({ contacts, loading, onDelete, onEdit }) => (
           </div>
         ))}
       {!loading && (!contacts || 0 >= contacts.length) && <div className="no-contacts">No contacts found</div>}
-      {loading && <div>LOADING ...</div>}
+      {loading && <div className="loading">LOADING ...</div>}
     </div>
   </div>
 );

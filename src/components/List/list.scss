@@ -64,6 +64,10 @@
       background-color: rgba($color-warning, 0.2);
       border: 1px solid $color-warning-border;
     }
+
+    .loading {
+      font-size: $font-xl;
+    }
   }
 }
 

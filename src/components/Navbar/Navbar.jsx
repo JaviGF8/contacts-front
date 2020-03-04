@@ -4,7 +4,7 @@ import Button from '../Button';
 import Input from '../Input';
 import { BUTTON_TYPES } from '../Button/Button';
 
-const Options = ({ onAdd, onFilter }) => (
+const Modal = ({ onAdd, onFilter }) => (
   <div className="navbar shadow">
     <div>
       <h1>My contacts</h1>
@@ -16,9 +16,9 @@ const Options = ({ onAdd, onFilter }) => (
   </div>
 );
 
-Options.propTypes = {
+Modal.propTypes = {
   onAdd: PropTypes.func.isRequired,
   onFilter: PropTypes.func.isRequired,
 };
 
-export default Options;
+export default Modal;
