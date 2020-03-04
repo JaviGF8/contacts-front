@@ -47,7 +47,7 @@ const Main = () => {
       .then(({ data }) => {
         setAllContacts(data);
       })
-      .catch(({ message }) => newToast(message));
+      .catch(({ message }) => 'test' !== process.env.ENVIRONMENT && newToast(message));
   };
 
   const onSave = (newContact) => {

@@ -7,7 +7,7 @@
   "scripts": {
     "start": "SET ENVIRONMENT=development&& webpack-dev-server -d --progress",
     "mac": "ENVIRONMENT=development webpack-dev-server -d --progress",
-    "test": "jest --maxWorkers=100%"
+    "test": "SET ENVIRONMENT=test&& jest --maxWorkers=100%"
   },
   "husky": {
     "hooks": {

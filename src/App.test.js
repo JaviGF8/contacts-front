@@ -14,8 +14,8 @@ describe('Contacts challenge', () => {
   it('render navbar', () => {
     const wrapper = mount(<App />);
 
-    const titleElement = wrapper.find('.navbar');
-    expect(titleElement).toHaveLength(1);
+    const navbar = wrapper.find('.navbar');
+    expect(navbar).toHaveLength(1);
 
     wrapper.unmount();
   });
@@ -23,9 +23,9 @@ describe('Contacts challenge', () => {
   it('render title', () => {
     const wrapper = mount(<App />);
 
-    const titleElement = wrapper.find('h1');
-    expect(titleElement).toHaveLength(1);
-    expect(titleElement.text()).toEqual('My contacts');
+    const title = wrapper.find('h1');
+    expect(title).toHaveLength(1);
+    expect(title.text()).toEqual('My contacts');
 
     wrapper.unmount();
   });
@@ -33,8 +33,8 @@ describe('Contacts challenge', () => {
   it('render contacts list', () => {
     const wrapper = mount(<App />);
 
-    const titleElement = wrapper.find('.contacts-list');
-    expect(titleElement).toHaveLength(1);
+    const contacts = wrapper.find('.contacts-list');
+    expect(contacts).toHaveLength(1);
 
     wrapper.unmount();
   });
@@ -42,8 +42,8 @@ describe('Contacts challenge', () => {
   it('render custom toast', () => {
     const wrapper = mount(<App />);
 
-    const titleElement = wrapper.find('.custom-toast');
-    expect(titleElement).toHaveLength(1);
+    const toast = wrapper.find('.custom-toast');
+    expect(toast).toHaveLength(1);
 
     wrapper.unmount();
   });
