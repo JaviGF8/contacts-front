@@ -28,7 +28,17 @@ Now start the development server using
 npm start
 ```
 
-⚠️ This terminal should persist open to run the project.
+If your using Mac, start with
+
+```
+npm run mac
+```
+
+You can also execute the tests with
+
+```
+npm test
+```
 
 ### Testing
 
