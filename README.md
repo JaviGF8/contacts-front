@@ -1,4 +1,4 @@
-# Contacts challenge
+# Contacts
 
 Contacts challenge is a project created by Javier Garcia using react. This app needs Contacts challenge back.
 
@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 2. Make sure that Contacts challenge back is running.
 
-   [Contacts challenge back repo](https://github.com/JaviGF8/contacts-challenge-back)
+   [Contacts challenge back repo](https://github.com/JaviGF8/contacts-back)
 
 ### Installing
 
